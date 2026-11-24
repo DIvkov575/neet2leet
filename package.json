@@ -1,0 +1,14 @@
+{
+  "name": "neet2leet",
+  "version": "0.1.0",
+  "description": "Sync the problems you solved on NeetCode.io to LeetCode.",
+  "type": "module",
+  "bin": { "neet2leet": "src/cli.ts" },
+  "scripts": {
+    "test": "bun test",
+    "compile": "bun build src/cli.ts --compile --outfile neet2leet",
+    "install-bin": "bun run compile && mkdir -p ~/.local/bin && cp neet2leet ~/.local/bin/neet2leet"
+  },
+  "engines": { "bun": ">=1.0.0" },
+  "license": "MIT"
+}
