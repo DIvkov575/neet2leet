@@ -6,6 +6,17 @@ NeetCode's GitHub sync stores your work in a `neetcode-submissions-*` repo.
 neet2leet reads that repo, and for every problem not yet Accepted on your
 LeetCode account it submits your newest submission in the language you wrote it in.
 
+## Run it (no install)
+
+Needs [Bun](https://bun.sh). Log into leetcode.com in Firefox or Chrome first.
+
+```sh
+bunx github:DIvkov575/neet2leet          # dry run: show what would be submitted
+bunx github:DIvkov575/neet2leet --yes    # submit
+```
+
+If you installed it, the same commands are:
+
 ```sh
 neet2leet            # dry run: show what would be submitted
 neet2leet --yes      # submit
@@ -28,11 +39,14 @@ Env: `LEETCODE_SESSION`, `LEETCODE_CSRF`, `NEET2LEET_REPO`, `NEET2LEET_CONFIG`.
 
 ## Install
 
-Needs [Bun](https://bun.sh) and, for private repos, the `gh` CLI.
+Needs [Bun](https://bun.sh). The `gh` CLI is used to auto-find your
+`neetcode-submissions-*` repo and to clone it if it's private; without `gh`, pass
+the repo explicitly (`neet2leet owner/neetcode-submissions-xxxx`).
 
 ```sh
+git clone https://github.com/DIvkov575/neet2leet && cd neet2leet
 bun run install-bin   # builds ./neet2leet and copies it to ~/.local/bin
 ```
 
-Cookie readers, submit, and solved-list code come from
+The browser-cookie, submit, and solved-list code comes from
 [leet-cli](https://github.com/DIvkov575/leet-cli).
